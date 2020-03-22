@@ -6,13 +6,13 @@ use App\Notifications\PaymentReceived;
 
 class PaymentsController extends Controller
 {
-    public function show()
+    public function create()
     {
         return view('payments.create');
     }
     
     public function store()
     {
-        request()->user()->notify(new PaymentReceived());
+        request()->user()->notify(new PaymentReceived(480));
     }
 }

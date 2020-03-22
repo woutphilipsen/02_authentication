@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Auth::routes();
+
 
 Route::get('/', 'PagesController@home');
 
@@ -26,4 +26,10 @@ Route::get('/home', 'HomeController@index')
     ->middleware('auth');
 
 Route::get('payments/create', 'PaymentsController@create')->middleware('auth');
-Route::get('payments', 'PaymentsController@store')->middleware('auth');
+Route::post('payments', 'PaymentsController@store')->middleware('auth');
+Route::get('notifications', 'UserNotificationsController@show')->middleware('auth');
+
+Route::get('conversations', 'ConversationsController@index');
+Route::get('conversations/{conversation}', 'ConversationsController@show');
+
+Auth::routes();
