@@ -24,3 +24,6 @@ Route::get('/', 'PagesController@home');
 Route::get('/home', 'HomeController@index')
     ->name('home')
     ->middleware('auth');
+
+Route::get('payments/create', 'PaymentsController@create')->middleware('auth');
+Route::get('payments', 'PaymentsController@store')->middleware('auth');

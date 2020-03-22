@@ -12,14 +12,17 @@ class PagesController extends Controller
 
     public function home() 
     {
-        Cache::remember('foo', 60, function() {
-            return 'foobar';
-        });
-
-        return Cache::get('foo');
-        // return File::get(public_path('index.php'));
-        // return Request::input('name'); 
-        // return View::make('welcome');
+        return View::make('welcome');
+        // ---------------FACADES---------------------
+            // Cache::remember('foo', 60, function() {
+            //    return 'foobar';
+            // });
+            // return Cache::get('foo');
+            
+            // return File::get(public_path('index.php'));
+            // return Request::input('name'); 
+            // return View::make('welcome');
+        // ---------------FACADES---------------------
     }
 
 }
